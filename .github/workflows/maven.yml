@@ -37,7 +37,7 @@ jobs:
       run: docker build -t kokareamol/devtaskmaster:latest .
 
     - name: trivy image scan
-      run: trivy image --format table -o image.html kokareamol/devtaskmaster:latest .
+      run: trivy image --format table -o image.html kokareamol/devtaskmaster:latest
       
           
     
