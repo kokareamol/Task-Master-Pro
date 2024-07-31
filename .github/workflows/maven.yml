@@ -24,6 +24,9 @@ jobs:
     
       run: mvn package --file pom.xml
       
+    - name: trivy image scan
+      run: trivy fs --format table -o outputfs.html .
+      
 
     
    
