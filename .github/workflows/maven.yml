@@ -46,6 +46,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: docker push
       run: docker push kokareamol/devtaskmaster:latest
+
+    - name: kubectl action
+      uses: tale/kubectl-action@v1
+      with:
+        base64-kube-config: ${{ secrets.KUBE_CONFIG }}
+    - run: kubectl apply -f deployment-service.yaml
       
           
     
